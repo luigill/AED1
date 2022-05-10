@@ -9,8 +9,8 @@ typedef struct
   int altura;
 } Pessoa;
 
-void *adicionar(Pessoa *p, int *n);
-void listar(Pessoa *p, int *n);
+void *adicionar(Pessoa *p, int *count);
+void listar(Pessoa *p, int *count);
 
 int main()
 {
@@ -53,21 +53,21 @@ int main()
   return 0;
 }
 
-void *adicionar(Pessoa *p, int *n)
+void *adicionar(Pessoa *p, int *count)
 {
-  p = (Pessoa *)realloc(p, ((*n) * sizeof(Pessoa)));
+  p = (Pessoa *)realloc(p, ((*count) * sizeof(Pessoa)));
   printf("Nome:\n");
-  scanf("%s", (p + (*n - 1))->nome);
+  scanf("%s", (p + (*count - 1))->nome);
   printf("Idade:\n");
-  scanf("%d", &(p + (*n - 1))->idade);
+  scanf("%d", &(p + (*count - 1))->idade);
   printf("Altura:\n");
-  scanf("%d", &(p + (*n - 1))->altura);
+  scanf("%d", &(p + (*count - 1))->altura);
   return p;
 }
 
-void listar(Pessoa *p, int *n)
+void listar(Pessoa *p, int *count)
 {
-  for (int i = 0; i < *n; i++)
+  for (int i = 0; i < *count; i++)
   {
     printf("Nome: %s\n", (p + i)->nome);
     printf("Idade: %d\n", (p + i)->idade);
