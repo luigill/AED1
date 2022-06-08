@@ -113,7 +113,7 @@ void QuickSort(int *vetor, int left, int right)
     {
       j--;
     }
-    // troca o elemento i pelo j
+    // troca o elemento i pelo j caso algum elemento esteja fora da sua lista
     if (i <= j)
     {
       tmp = vetor[i];
